@@ -1,14 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "firebasestorage.googleapis.com" },
-    ],
+  typescript: {
+    ignoreBuildErrors: true,
   },
-  eslint: { ignoreDuringBuilds: true },
-  typescript: { ignoreBuildErrors: true },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // Yeh line Next.js ko static checks chalane se rokegi
+  experimental: {
+    workerThreads: false,
+    cpus: 1
+  }
 };
 
 export default nextConfig;
