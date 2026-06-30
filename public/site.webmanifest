@@ -1,0 +1,8 @@
+{
+  "name": "Nexa Telecom",
+  "short_name": "Nexa",
+  "theme_color": "#00C2A8",
+  "background_color": "#0B1F2A",
+  "display": "standalone",
+  "start_url": "/"
+}

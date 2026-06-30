@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-mist text-ink dark:bg-ink dark:text-mist font-body transition-colors duration-300;
+}
+
+::selection {
+  background-color: #00C2A8;
+  color: #0B1F2A;
+}
+
+/* Signal bars signature motif */
+.signal-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+.signal-bars span {
+  width: 4px;
+  background: currentColor;
+  border-radius: 2px;
+  display: block;
+}
+.signal-bars span:nth-child(1) { height: 30%; }
+.signal-bars span:nth-child(2) { height: 55%; }
+.signal-bars span:nth-child(3) { height: 75%; }
+.signal-bars span:nth-child(4) { height: 100%; }
+
+.bar-divider {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 28px;
+}
+.bar-divider span {
+  width: 5px;
+  background: linear-gradient(180deg, #00C2A8, transparent);
+  border-radius: 3px;
+}
+
+.glass-card {
+  @apply bg-white/70 dark:bg-midnight/60 backdrop-blur-xl border border-white/40 dark:border-white/10;
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-offset-2 ring-signal ring-offset-mist dark:ring-offset-ink;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
